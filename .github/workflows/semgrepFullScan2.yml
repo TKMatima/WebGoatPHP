@@ -27,7 +27,7 @@ jobs:
             semgrep \
               --sarif --output report.sarif \
               --metrics=off \
-              --config="p/default"
+              --config="p/owasp-top-ten"
 
             
         # upload to GAS
