@@ -3,7 +3,7 @@ name: Semgrep Full Scan
 on:
   workflow_dispatch:
     branches:
-      - main
+      - master
   schedule:
     - cron:  '0 1 * * 6'
 
@@ -11,6 +11,7 @@ jobs:
 
   semgrep-full:
       runs-on: ubuntu-latest
+      permissions: write-all
       container:
         image: returntocorp/semgrep
 
