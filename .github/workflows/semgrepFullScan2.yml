@@ -27,6 +27,15 @@ jobs:
               --sarif --output report.sarif \
               --metrics=off \
               --config="p/default"
+
+            
+        # upload to GAS
+        - name: Upload SARIF file to GAS
+          uses: github/codeql-action/upload-sarif@v2
+          with:
+            sarif_file: report.sarif
+          if: always()
+        
         # step 3
         
         - name: save report as pipeline artifact
